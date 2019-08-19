@@ -49,7 +49,7 @@ end
 minetest.register_chatcommand("resetskills", {
 	description = "Resets the unlocked recipes of a player",
 	params = "<player>",
-	privs = {},
+	privs = {ban=true},
 	func = function(name, param)
     local unlocked = crafting.get_unlocked(name)
     for key, value in pairs(unlocked) do
